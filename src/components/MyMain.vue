@@ -1,6 +1,9 @@
 <template>
   <div >
     <div class="container">
+      <div class="discs_container">
+
+      </div>
       
     </div>
   </div>
@@ -15,8 +18,20 @@ export default {
 
 <style scoped lang="scss">
   .container {
-      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 600px;
       background-color: #1E2D3B;
+  }
+
+  .discs_container{
+      
+
+      width:500px;
+      height: 500px;
+      border:1px solid white;
+
   }
 
 
