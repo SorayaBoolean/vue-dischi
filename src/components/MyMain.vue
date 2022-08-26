@@ -1,5 +1,9 @@
 <template>
-  <h3>Ciao mondo2 commit</h3>
+  <div >
+    <div class="container">
+      
+    </div>
+  </div>
 </template>
 
 <script>
@@ -9,6 +13,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+  .container {
+      height: 100vh;
+      background-color: #1E2D3B;
+  }
+
 
 </style>

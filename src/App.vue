@@ -1,8 +1,10 @@
 <template>
   <div id="app">
+
     <MyHeader/>
     <MyMain/>
   </div>
+    
 </template>
 
 <script>
