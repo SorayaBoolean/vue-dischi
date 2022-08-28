@@ -21,14 +21,32 @@
 
 <script>
 
+import axios from 'axios'
+
 export default {
     name: 'MyMain',
-    created () {
-      console.log('componente creata')
-    }
+    data () {
+      return {
+        MyMain: [],
+        endPoint: 'https://flynn.boolean.careers/exercises/api/array/music'
+      }
+    },
 
-}
+    created () {
+      this.getDiscs ();
+},
+    methods:
+      {
+        getDiscs () {
+          axios.get(this.endPoint)
+      .then (response => {
+        this.MyMain = response.data
+        });
+        }
+      }
+    }
 </script>
+
 
 <style scoped lang="scss">
   .container {
