@@ -22,7 +22,7 @@
 export default {
 name: 'SingleDisc',
 props: {
-    disc: Object
+    disc: Array 
 }
 }
 </script>

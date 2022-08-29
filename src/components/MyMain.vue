@@ -29,7 +29,7 @@ export default {
         getDiscs () {
           axios.get(this.endPoint)
       .then (response => {
-        this.MyMain = response.data
+        this.MyMain = response.data.response
         });
         }
       }
