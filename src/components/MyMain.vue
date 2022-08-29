@@ -1,6 +1,11 @@
 <template>
  <div>
-  <SingleDisc v-for="(disc, index) in MyMain" :key="index" :disc="disc"/>
+  <div class="container">
+    <div class="discs_container">
+      <SingleDisc v-for="(disc, index) in MyMain" :key="index" :disc="disc"/>
+    </div>
+  </div>
+  
  </div>
 </template>
 
@@ -40,6 +45,20 @@ export default {
 
 
 <style scoped lang="scss">
-  
+
+  .container {
+      height: 100%;
+      background-color: #1E2D3B;
+  }
+
+  .discs_container {
+    margin: auto;
+    padding-top: 30px;
+    width: 1000px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
 </style>

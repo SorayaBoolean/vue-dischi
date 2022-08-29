@@ -1,6 +1,4 @@
 <template>
-   <div class="container">
-      <div class="discs_container">
           <div class="singleDisc">
             <div class="img_card">
               <img :src="disc.poster" alt="poster">
@@ -13,9 +11,6 @@
               <p>{{disc.year}}</p>
             </div>
           </div>    
-      </div>
-      
-    </div>
 </template>
 
 <script>
@@ -28,53 +23,30 @@ props: {
 </script>
 
 <style scoped lang="scss">
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height:700px;
-      background-color: #1E2D3B;
-  }
-
-  .discs_container{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content: center;
-      width:1000px;
-      height:600px;
-  }
-
   .singleDisc {
-    height: calc(100% / 2);
-    width: calc(100% /6);
+    height: 250px;
+    width: 150px;
     margin: 10px;
-    border:1px solid white;
-    background-color:#2E3A46;
+    background-color:rgba(211, 211, 211, 0.195);
 
       .img_card {
         margin: auto;
-        margin-top:15px;
-        height: 130px;
-        width: 130px;
-        border: 1px solid green;
-
+        height: 100px;
+        width: 150px;
+        img{
+          padding: 10px 0px;
+          margin: 0px 22px;
+          height: 100%;
+        }
       }
       .title_card{
-        margin-top:15px;
-        padding: 15px;
         text-align: center;
         color: white;
-        border: 1px solid lightblue;
       }
       .author_card {
-        margin-top:15px;
-        padding: 15px;
         text-align: center;
         color: grey;
-        border: 1px solid orange;
       }
-    
-
   }
 
 </style>
