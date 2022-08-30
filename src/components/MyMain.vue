@@ -22,7 +22,7 @@ export default {
     data () {
       return {
         MyMain: [],
-        endPoint: 'https://flynn.boolean.careers/exercises/api/array/music'
+        genres: []
       }
     },
 
@@ -32,10 +32,20 @@ export default {
     methods:
       {
         getDiscs () {
-          axios.get(this.endPoint)
+          axios.get('https://flynn.boolean.careers/exercises/api/array/music')
       .then (response => {
-        this.MyMain = response.data.response
+        this.MyMain = response.data.response;
+
+        this.MyMain.forEach(disc => {
+          if(!this.genres.includes(disc.genre)) {
+            this.genres.push(disc.genre)
+          }
         });
+         
+        this.$emit ('genresReady', this.genres)
+
+        });
+
         }
       }
     }

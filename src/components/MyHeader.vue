@@ -6,7 +6,7 @@
 
     <div class="select_container">
         <select name="genere" id="genere">
-            <option value="opt1">Seleziona un genere</option>
+            <option v-for="(genre, index) in genresList" :key="index" :value="genre">{{genre}}</option>
         </select>
     </div>
     
@@ -17,7 +17,10 @@
 
 <script>
 export default {
-    name:'MyHeader'
+    name:'MyHeader',
+    props: {
+        genresList: Array
+    }
 
 }
 </script>
