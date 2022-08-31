@@ -2,7 +2,7 @@
  <div>
   <div class="container">
     <div class="discs_container">
-      <SingleDisc v-for="(disc, index) in MyMain" :key="index" :disc="disc"/>
+      <SingleDisc v-for="(disc, index) in filteredDisc" :key="index" :disc="disc"/>
     </div>
   </div>
   
@@ -25,7 +25,26 @@ export default {
         genres: []
       }
     },
-
+    props: {
+      genreToSearch: String
+    },
+    computed: {
+      filteredDisc () {
+        if(this.genreToSearch==''){
+          return this.MyMain;
+        }else{
+          const ArrayDiscs = this.MyMain.filter(disc => {
+            if (disc.genre == this.genreToSearch) {
+              return true;
+            } else {
+              return false;
+            }
+          });
+          return ArrayDiscs;
+        }
+      }
+    }
+  ,
     created () {
       this.getDiscs ();
 },
