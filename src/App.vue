@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MyHeader :genresList ="genresArray"/>
+    <MyHeader @changedGenre="startSearch" :genresList ="genresArray"/>
     <MyMain @genresReady="getGenresList"/> 
   </div>
     
@@ -18,13 +18,17 @@ export default {
   },
   data () {
     return {
-      genresArray: []
+      genresArray: [],
+      genreToSearch: ''
     }
   },
   methods: {
 
     getGenresList (allGenres) {
       this.genresArray = allGenres
+    },
+    startSearch (genreToSearch) {
+      this.genreToSearch = genreToSearch;
     }
   }
 }

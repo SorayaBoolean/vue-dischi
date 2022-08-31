@@ -5,8 +5,8 @@
     <img src="@/img/Spotify_logo_without_text.svg.webp" alt="logo">
 
     <div class="select_container">
-        <select name="genere" id="genere">
-            <option v-for="(genre, index) in genresList" :key="index" value="genre">{{genre}}</option>
+        <select @change="$emit('changedGenre', selectedGenre)" v-model="selectedGenre" name="genere" id="genere">
+            <option v-for="(genre, index) in genresList" :key="index" :value="genre">{{genre}}</option>
         </select>
     </div>
     
@@ -20,6 +20,12 @@ export default {
     name:'MyHeader',
     props: {
     genresList: Array
+    },
+    data () {
+        return {
+            selectedGenre: ''
+
+        }
     }
 
 }
