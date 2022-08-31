@@ -6,7 +6,7 @@
 
     <div class="select_container">
         <select name="genere" id="genere">
-            <option v-for="(genre, index) in genresList" :key="index" :value="genre">{{genre}}</option>
+            <option v-for="(genre, index) in genresList" :key="index" value="genre">{{genre}}</option>
         </select>
     </div>
     
@@ -19,7 +19,7 @@
 export default {
     name:'MyHeader',
     props: {
-        genresList: Array
+    genresList: Array
     }
 
 }
